@@ -24,9 +24,6 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Remove hardcoded java.home for CI
-        run: sed -i '/org\.gradle\.java\.home/d' gradle.properties
-
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 

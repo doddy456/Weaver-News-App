@@ -20,8 +20,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: gradle
-      - name: Remove hardcoded java.home for CI
-        run: sed -i '/org\.gradle\.java\.home/d' gradle.properties
       - name: Run lint
         run: ./gradlew lint
 
@@ -36,8 +34,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: gradle
-      - name: Remove hardcoded java.home for CI
-        run: sed -i '/org\.gradle\.java\.home/d' gradle.properties
       - name: Run Checkstyle
         run: ./gradlew checkstyle
 
@@ -52,8 +48,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: gradle
-      - name: Remove hardcoded java.home for CI
-        run: sed -i '/org\.gradle\.java\.home/d' gradle.properties
       - name: Run SpotBugs
         run: ./gradlew spotbugsMain
 
@@ -68,8 +62,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: gradle
-      - name: Remove hardcoded java.home for CI
-        run: sed -i '/org\.gradle\.java\.home/d' gradle.properties
       - name: Run tests
         run: ./gradlew test
 
@@ -84,8 +76,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: gradle
-      - name: Remove hardcoded java.home for CI
-        run: sed -i '/org\.gradle\.java\.home/d' gradle.properties
       - name: Build release APK
         run: ./gradlew assembleRelease
 
@@ -101,8 +91,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: gradle
-      - name: Remove hardcoded java.home for CI
-        run: sed -i '/org\.gradle\.java\.home/d' gradle.properties
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
