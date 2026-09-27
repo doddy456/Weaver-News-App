@@ -23,5 +23,8 @@ jobs:
           java-version: '17'
           cache: gradle
 
+      - name: Remove hardcoded java.home for CI
+        run: sed -i '/org\.gradle\.java\.home/d' gradle.properties
+
       - name: Run tests with Gradle
         run: ./gradlew test
